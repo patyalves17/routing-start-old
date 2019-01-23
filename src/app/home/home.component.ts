@@ -13,9 +13,11 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  loadServers(){
-    console.log("loadServers");
-    this.router.navigate(['/servers']);
+  loadServers(id){
+    this.router.navigate(
+      ['/servers', id, 'edit'],
+      { queryParams : { allowedit:'1' } ,fragment:'loading'},
+    );
   }
 
 }
